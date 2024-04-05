@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+int character_value(char c) {
+    return c - 'a' + 1;
+}
+
+int main() {
+    int total_value = 0;
+    int characters_read = 0;
+    char input_char;
+
+    while (cin >> input_char) {
+        if (input_char == '!') {
+            break;
+        }
+
+        int value = character_value(input_char);
+        total_value += value;
+        characters_read++;
+
+        if (total_value > 100) {
+            cout << "Too Many" << endl;
+            cout << characters_read << endl;
+            return 0;
+        }
+    }
+
+    cout << total_value << endl;
+    return 0;
+}
